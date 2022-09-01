@@ -1,2 +1,1 @@
-# testing-ts
-Testing some skills with TS.
+Project to test skills with TypeScript and React.
