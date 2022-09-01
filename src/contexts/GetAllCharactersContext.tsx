@@ -20,5 +20,11 @@ export const GetAllCharactersProvider = ({ children }: IChildren) => {
       .catch((err) => console.error(err));
   }, [page]);
 
-  return <GetAllCharactersContext.Provider value={{ charactersList }}>{children}</GetAllCharactersContext.Provider>;
+  const nextPage = () => {
+    setPage((prev) => prev + 1);
+  };
+
+  return (
+    <GetAllCharactersContext.Provider value={{ charactersList, nextPage }}>{children}</GetAllCharactersContext.Provider>
+  );
 };
