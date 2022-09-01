@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { CharacterSchema } from "../interfaces/characterInterfaces";
+import { CharacterSchema, PageSchema } from "../interfaces/characterInterfaces";
 import { IGetAllCharacters } from "../interfaces/contextInterfaces";
 import { IChildren } from "../interfaces/reactInterfaces";
 import api from "../services/api";
@@ -12,10 +12,9 @@ export const GetAllCharactersProvider = ({ children }: IChildren) => {
 
   useEffect(() => {
     api
-      .get("/characters")
+      .get(`/characters?page=${page}`)
       .then((res) => {
-        setCharactersList(res.data);
-        console.log(res.data);
+        setCharactersList(res.data.data);
         return res;
       })
       .catch((err) => console.error(err));

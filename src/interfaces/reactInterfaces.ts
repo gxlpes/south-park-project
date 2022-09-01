@@ -5,6 +5,10 @@ export interface ICharacter {
   character: CharacterSchema;
 }
 
+export interface ICharacterList {
+  characterList: CharacterSchema[];
+}
+
 export interface IChildren {
   children: ReactNode;
 }

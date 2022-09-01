@@ -1,4 +1,4 @@
-import { CharacterSchema, Links, Meta } from "./characterInterfaces";
+import { CharacterSchema, LinksSchema, MetaSchema } from "./characterInterfaces";
 
 export interface IGetAllCharacters {
   charactersList: CharacterSchema[];

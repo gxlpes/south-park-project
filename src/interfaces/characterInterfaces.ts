@@ -1,3 +1,9 @@
+export interface PageSchema {
+  data: CharacterSchema;
+  links: LinksSchema;
+  meta: MetaSchema;
+}
+
 export interface CharacterSchema {
   id: number;
   name: string;
@@ -27,14 +33,14 @@ export enum Sex {
   MaleAndFemale = "Male and Female",
 }
 
-export interface Links {
+export interface LinksSchema {
   first: string;
   last: string;
   prev: null;
   next: string;
 }
 
-export interface Meta {
+export interface MetaSchema {
   current_page: number;
   from: number;
   last_page: number;

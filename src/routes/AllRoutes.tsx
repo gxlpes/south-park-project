@@ -4,7 +4,7 @@ import { Route, Routes } from "react-router-dom";
 const AllRoutes = () => {
   return (
     <Routes>
-      <Route path="/haha" element={<Home />} />;
+      <Route path="/" element={<Home />} />;
     </Routes>
   );
 };

@@ -1,8 +1,16 @@
+import { useContext } from "react";
+import { GetAllCharactersContext } from "../contexts/GetAllCharactersContext";
+
 const Home = () => {
+  const { charactersList } = useContext(GetAllCharactersContext);
+  console.log(charactersList);
+
   return (
     <>
-      <p>Hello</p>
-      <p>World</p>
+      <p>Hi</p>
+      {charactersList.map((el) => (
+        <p>{el.name}</p>
+      ))}
     </>
   );
 };
