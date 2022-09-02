@@ -5,8 +5,8 @@ export interface ICharacter {
   character: CharacterSchema;
 }
 
-export interface ICharacterList {
-  characterList: CharacterSchema[];
+export interface ICharactersList {
+  charactersList: CharacterSchema[];
 }
 
 export interface IChildren {

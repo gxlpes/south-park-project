@@ -1,8 +1,8 @@
-import { GetAllCharactersProvider } from "./GetAllCharactersContext";
+import { GetAllCharactersInfo } from "./GetAllCharactersContext";
 import { IChildren } from "../interfaces/reactInterfaces";
 
 const Providers = ({ children }: IChildren) => {
-  return <GetAllCharactersProvider>{children}</GetAllCharactersProvider>;
+  return <GetAllCharactersInfo>{children}</GetAllCharactersInfo>;
 };
 
 export default Providers;

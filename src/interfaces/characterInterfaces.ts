@@ -19,7 +19,7 @@ export interface CharacterSchema {
   url: string;
   family: string;
   relatives: Relative[];
-  episodes: string[];
+  episodes: string;
 }
 
 export interface Relative {
