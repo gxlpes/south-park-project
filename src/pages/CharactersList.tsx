@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { CharacterSchema } from "../interfaces/characterInterfaces";
 
 const CharactersList = ({ charactersList }: ICharactersList): any => {
-  console.log(charactersList);
   return charactersList.map((el) => <p>{el.name}</p>);
 };
 

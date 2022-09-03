@@ -8,26 +8,28 @@ import api from "../services/api";
 export const GetAllCharactersContext = createContext<IGetAllCharacters>({} as IGetAllCharacters);
 
 export const GetAllCharactersInfo = ({ children }: IChildren) => {
+  let navigate = useNavigate();
   const [charactersList, setCharactersList] = useState<CharacterSchema[]>([]);
   const [page, setPage] = useState(() => {
-    if (window.localStorage.getItem("pageAcess")) {
-      return Number(window.localStorage.getItem("pageAcess"));
+    if (window.localStorage.getItem("pageAccess")) {
+      return Number(window.localStorage.getItem("pageAccess"));
     } else {
       return 1;
     }
   });
-  let navigate = useNavigate();
+
+  const storage = window.localStorage.getItem("pageAccess");
 
   useEffect(() => {
     api
       .get(`/characters?page=${page}`)
       .then((res) => {
         setCharactersList(res.data.data);
-        window.localStorage.setItem("pageAcess", `${page}`);
+        window.localStorage.setItem("pageAccess", `${page}`);
         return res;
       })
       .catch((err) => console.error(err));
-  }, [page]);
+  }, [page, storage]);
 
   const nextPage = () => {
     setPage((prev) => prev + 1);
