@@ -6,8 +6,12 @@ import CharactersList from "./CharactersList";
 const Home = () => {
   const navigate = useNavigate();
   const { charactersList, nextPage, prevPage, page, setPage } = useContext(GetAllCharactersContext);
-  const { page1 } = useParams();
-  console.log(page1);
+  const { p } = useParams();
+  console.log(p);
+
+  if (page != Number(p)) {
+    setPage(Number(p));
+  }
 
   return (
     <>

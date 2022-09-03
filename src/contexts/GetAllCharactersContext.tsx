@@ -9,7 +9,13 @@ export const GetAllCharactersContext = createContext<IGetAllCharacters>({} as IG
 
 export const GetAllCharactersInfo = ({ children }: IChildren) => {
   const [charactersList, setCharactersList] = useState<CharacterSchema[]>([]);
-  const [page, setPage] = useState<number>(1);
+  const [page, setPage] = useState(() => {
+    if (window.localStorage.getItem("pageAcess")) {
+      return Number(window.localStorage.getItem("pageAcess"));
+    } else {
+      return 1;
+    }
+  });
   let navigate = useNavigate();
 
   useEffect(() => {
@@ -17,6 +23,7 @@ export const GetAllCharactersInfo = ({ children }: IChildren) => {
       .get(`/characters?page=${page}`)
       .then((res) => {
         setCharactersList(res.data.data);
+        window.localStorage.setItem("pageAcess", `${page}`);
         return res;
       })
       .catch((err) => console.error(err));
@@ -24,12 +31,12 @@ export const GetAllCharactersInfo = ({ children }: IChildren) => {
 
   const nextPage = () => {
     setPage((prev) => prev + 1);
-    navigate(`/p${page + 1}`);
+    navigate(`/${page + 1}`);
   };
 
   const prevPage = () => {
     setPage((prev) => prev - 1);
-    navigate(`/p${page - 1}`);
+    navigate(`/${page - 1}`);
   };
 
   return (
