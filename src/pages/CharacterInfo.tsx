@@ -1,24 +1,24 @@
-import { useContext, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useContext } from "react";
+import { useParams, Routes, Route, Link } from "react-router-dom";
 import { GetAllCharactersContext } from "../contexts/GetAllCharactersContext";
 
 const CharacterInfo = () => {
-  const { charactersList, nextPage, prevPage, page } = useContext(GetAllCharactersContext);
+  const { charactersList } = useContext(GetAllCharactersContext);
+  const { id } = useParams();
+  const arrId = Number(id) - 1;
+  const character = charactersList[arrId];
+  console.log(character);
 
   return (
     <>
-      {charactersList.map((el) => {
-        <>
-          <ul>
-            <li>{el.name}</li>
-            <li>{el.age}</li>
-            <li>{el.occupation}</li>
-            <li>{el.episodes} episodes</li>
-            <li>{el.family}</li>
-          </ul>
-          <button>Episodes</button>
-        </>;
-      })}
+      <p>{character.id}</p>
+      <p>{character.name}</p>
+      <p>{character.age ? character.age : "No data"}</p>
+      <p>{character.occupation}</p>
+      <Link to={`/info/${character.id}/episodes`}>Episodes</Link>
+      <Routes>
+        <Route path="/episodes">Episodes</Route>
+      </Routes>
     </>
   );
 };

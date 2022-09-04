@@ -20,6 +20,7 @@ export interface CharacterSchema {
   family: string;
   relatives: Relative[];
   episodes: string;
+  arrId: number;
 }
 
 export interface Relative {
