@@ -8,7 +8,6 @@ const CharacterInfo = () => {
 
   useEffect(() => {
     setId(Number(id));
-    console.log("Trocou id");
   }, [id]);
 
   return (

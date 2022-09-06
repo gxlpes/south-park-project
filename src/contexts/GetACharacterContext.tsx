@@ -8,17 +8,19 @@ export const GetACharacterContext = createContext<IGetACharacter>({} as IGetACha
 
 export const GetACharacterContextProvider = ({ children }: IChildren) => {
   const [characterDetail, setCharacterDetail] = useState<CharacterSchema[]>([]);
-  const [id, setId] = useState(1);
+  const [id, setId] = useState(0);
 
   useEffect(() => {
-    api
-      .get(`/characters/${id}`)
-      .then((res) => {
-        setCharacterDetail(res.data.data);
-        console.log(res.data.data);
-        return res;
-      })
-      .catch((err) => console.error(err));
+    if (id > 0) {
+      api
+        .get(`/characters/${id}`)
+        .then((res) => {
+          setCharacterDetail(res.data.data);
+          console.log(res.data.data);
+          return res;
+        })
+        .catch((err) => console.error(err));
+    }
   }, [id]);
 
   return (
