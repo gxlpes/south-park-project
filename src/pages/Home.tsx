@@ -4,8 +4,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import CharactersList from "./CharactersList";
 
 const Home = () => {
-  const navigate = useNavigate();
   const { charactersList, nextPage, prevPage, page, setPage } = useContext(GetAllCharactersContext);
+  const navigate = useNavigate();
   const { p } = useParams();
 
   useEffect(() => {

@@ -8,7 +8,7 @@ const AllRoutes = () => {
     <Routes>
       <Route path="/" element={<Navigate to="/1" />} />
       <Route path="/info">
-        <Route path="/info/:id/" element={<CharacterInfo />}>
+        <Route path="/info/:id" element={<CharacterInfo />}>
           <Route path="/info/:id/episodes" element={<Episodes />} />
         </Route>
       </Route>

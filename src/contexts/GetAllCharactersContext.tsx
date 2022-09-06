@@ -7,7 +7,7 @@ import api from "../services/api";
 
 export const GetAllCharactersContext = createContext<IGetAllCharacters>({} as IGetAllCharacters);
 
-export const GetAllCharactersInfo = ({ children }: IChildren) => {
+export const GetAllCharactersProvider = ({ children }: IChildren) => {
   let navigate = useNavigate();
   const [charactersList, setCharactersList] = useState<CharacterSchema[]>([]);
   const [page, setPage] = useState(() => {
@@ -19,17 +19,18 @@ export const GetAllCharactersInfo = ({ children }: IChildren) => {
   });
 
   const storage = window.localStorage.getItem("pageAccess");
-
+  let arrChar: string[] = [];
   useEffect(() => {
     api
       .get(`/characters?page=${page}`)
       .then((res) => {
         setCharactersList(res.data.data);
+        console.log(res.data.data);
         window.localStorage.setItem("pageAccess", `${page}`);
         return res;
       })
       .catch((err) => console.error(err));
-  }, [page, storage]);
+  }, [storage, page]);
 
   const nextPage = () => {
     setPage((prev) => prev + 1);
