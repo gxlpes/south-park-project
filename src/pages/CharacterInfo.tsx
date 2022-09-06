@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import { useParams, Routes, Route, Link, useNavigate } from "react-router-dom";
 import { GetACharacterContext } from "../contexts/GetACharacterContext";
-import Episodes from "./Episodes";
+import EpisodesList from "./EpisodesList";
 
 const CharacterInfo = () => {
   const { characterDetail, setId } = useContext(GetACharacterContext);
@@ -19,9 +19,9 @@ const CharacterInfo = () => {
       <p>{characterDetail.name}</p>
       <p>{characterDetail.age ? characterDetail.age : "No data"}</p>
       <p>{characterDetail.occupation}</p>
-      <Link to={`/info/${id}/episodes`}>Episodes</Link>
+      <Link to={`/characters/${id}/episodes`}>Episodes</Link>
       <Routes>
-        <Route path={`/episodes`} element={<Episodes />} />
+        <Route path={`/episodes`} element={<EpisodesList />} />
       </Routes>
     </>
   );

@@ -1,11 +1,14 @@
 import { GetAllCharactersProvider } from "./GetAllCharactersContext";
-import { GetACharacterContext, GetACharacterContextProvider } from "./GetACharacterContext";
+import { GetACharacterContextProvider } from "./GetACharacterContext";
+import { GetEpisodeContextProvider } from "./GetEpisodeContext";
 import { IChildren } from "../interfaces/reactInterfaces";
 
 const Providers = ({ children }: IChildren) => {
   return (
     <GetAllCharactersProvider>
-      <GetACharacterContextProvider>{children}</GetACharacterContextProvider>
+      <GetACharacterContextProvider>
+        <GetEpisodeContextProvider>{children}</GetEpisodeContextProvider>
+      </GetACharacterContextProvider>
     </GetAllCharactersProvider>
   );
 };

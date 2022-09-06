@@ -1,4 +1,5 @@
-import { CharacterSchema, LinksSchema, MetaSchema } from "./characterInterfaces";
+import { CharacterSchema } from "./characterInterfaces";
+import { EpisodeDataSchema } from "./episodeInterfaces";
 import { Dispatch, SetStateAction } from "react";
 
 export interface IGetAllCharacters {
@@ -13,4 +14,9 @@ export interface IGetACharacter {
   setId: Dispatch<SetStateAction<number>>;
   setCharacterDetail: Dispatch<SetStateAction<CharacterSchema[]>>;
   characterDetail: any;
+}
+
+export interface IGetEpisode {
+  setEpisodeId: Dispatch<SetStateAction<number>>;
+  episodeData: any;
 }
