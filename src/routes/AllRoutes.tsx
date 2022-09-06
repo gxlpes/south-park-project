@@ -7,12 +7,12 @@ const AllRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Navigate to="/1" />} />
+      <Route path="/:p" element={<Home />} />
       <Route path="/info">
-        <Route path="/info/:id" element={<CharacterInfo />}>
+        <Route path=":id" element={<CharacterInfo />}>
           <Route path="/info/:id/episodes" element={<Episodes />} />
         </Route>
       </Route>
-      <Route path="/:p" element={<Home />} />
       <Route path="*" element={<Home />} />
     </Routes>
   );
