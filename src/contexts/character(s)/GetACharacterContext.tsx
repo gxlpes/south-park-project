@@ -1,19 +1,19 @@
 import { createContext, useEffect, useState } from "react";
-import { CharacterSchema } from "../interfaces/characterInterfaces";
-import { IGetACharacter } from "../interfaces/contextInterfaces";
-import { IChildren } from "../interfaces/reactInterfaces";
-import api from "../services/api";
+import { CharacterSchema } from "../../interfaces/characterInterfaces";
+import { IGetACharacter } from "../../interfaces/contextInterfaces";
+import { IChildren } from "../../interfaces/reactInterfaces";
+import api from "../../services/api";
 
 export const GetACharacterContext = createContext<IGetACharacter>({} as IGetACharacter);
 
 export const GetACharacterContextProvider = ({ children }: IChildren) => {
   const [characterDetail, setCharacterDetail] = useState<CharacterSchema[]>([]);
-  const [id, setId] = useState(0);
+  const [characterId, setCharacterId] = useState(0);
 
   useEffect(() => {
-    if (id > 0) {
+    if (characterId > 0) {
       api
-        .get(`/characters/${id}`)
+        .get(`/characters/${characterId}`)
         .then((res) => {
           setCharacterDetail(res.data.data);
           console.log(res.data.data);
@@ -21,10 +21,10 @@ export const GetACharacterContextProvider = ({ children }: IChildren) => {
         })
         .catch((err) => console.error(err));
     }
-  }, [id]);
+  }, [characterId]);
 
   return (
-    <GetACharacterContext.Provider value={{ setCharacterDetail, setId, characterDetail }}>
+    <GetACharacterContext.Provider value={{ setCharacterDetail, setCharacterId, characterDetail }}>
       {children}
     </GetACharacterContext.Provider>
   );

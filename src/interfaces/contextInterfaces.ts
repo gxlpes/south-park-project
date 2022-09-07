@@ -11,7 +11,7 @@ export interface IGetAllCharacters {
 }
 
 export interface IGetACharacter {
-  setId: Dispatch<SetStateAction<number>>;
+  setCharacterId: Dispatch<SetStateAction<number>>;
   setCharacterDetail: Dispatch<SetStateAction<CharacterSchema[]>>;
   characterDetail: any;
 }
@@ -26,5 +26,5 @@ export interface IGetAllEpisodes {
 
 export interface IGetAEpisode {
   setEpisodeId: Dispatch<SetStateAction<number>>;
-  episodeData?: EpisodeDataSchema;
+  episodeDetail?: EpisodeDataSchema;
 }

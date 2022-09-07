@@ -1,25 +1,25 @@
-import { GetACharacterContext } from "../contexts/GetACharacterContext";
+import { GetACharacterContext } from "../../contexts/character(s)/GetACharacterContext";
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { GetEpisodeContext } from "../contexts/GetEpisodeContext";
+import { GetAEpisodeContext } from "../../contexts/episode(s)/GetAEpisodeContext";
 
 const EpisodesListCharacter = () => {
-  const { characterDetail } = useContext(GetACharacterContext);
-  const { setEpisodeId } = useContext(GetEpisodeContext);
+  const { episodeDetail } = useContext(GetAEpisodeContext);
+  const { setCharacterId } = useContext(GetACharacterContext);
   const navigate = useNavigate();
 
-  const arrEpisodes = characterDetail.episodes;
+  const arrCharacters = episodeDetail?.characters;
 
   const EpisodeInfoHandler = (el: string) => {
     const id = el.split("/").pop();
-    navigate(`/episode/${id}`);
-    setEpisodeId(Number(id));
+    navigate(`/character/${id}`);
+    setCharacterId(Number(id));
   };
 
   return (
     <>
       <ul>
-        {arrEpisodes.map((el: string) => (
+        {arrCharacters?.map((el: string) => (
           <a key={el} onClick={() => EpisodeInfoHandler(el)}>
             <li>{el}</li>
           </a>

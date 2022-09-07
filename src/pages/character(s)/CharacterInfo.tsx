@@ -1,16 +1,14 @@
 import { useContext, useEffect } from "react";
-import { useParams, Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
-import { GetACharacterContext } from "../contexts/GetACharacterContext";
-import EpisodesListCharacter from "./EpisodesListCharacter";
-import EpisodesList from "./EpisodesListCharacter";
+import { useParams, Link, useNavigate, Outlet } from "react-router-dom";
+import { GetACharacterContext } from "../../contexts/character(s)/GetACharacterContext";
 
 const CharacterInfo = () => {
-  const { characterDetail, setId } = useContext(GetACharacterContext);
+  const { characterDetail, setCharacterId } = useContext(GetACharacterContext);
   const { id } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
-    setId(Number(id));
+    setCharacterId(Number(id));
   }, [id]);
 
   return (

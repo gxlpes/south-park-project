@@ -1,9 +1,9 @@
 import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { CharacterSchema, PageSchema } from "../interfaces/characterInterfaces";
-import { IGetAllCharacters } from "../interfaces/contextInterfaces";
-import { IChildren } from "../interfaces/reactInterfaces";
-import api from "../services/api";
+import { CharacterSchema, PageSchema } from "../../interfaces/characterInterfaces";
+import { IGetAllCharacters } from "../../interfaces/contextInterfaces";
+import { IChildren } from "../../interfaces/reactInterfaces";
+import api from "../../services/api";
 
 export const GetAllCharactersContext = createContext<IGetAllCharacters>({} as IGetAllCharacters);
 

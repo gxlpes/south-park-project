@@ -1,8 +1,8 @@
-import { GetAllCharactersProvider } from "./GetAllCharactersContext";
-import { GetACharacterContextProvider } from "./GetACharacterContext";
-import { GetEpisodeContextProvider } from "./GetEpisodeContext";
+import { GetAllCharactersProvider } from "./character(s)/GetAllCharactersContext";
+import { GetACharacterContextProvider } from "./character(s)/GetACharacterContext";
 import { IChildren } from "../interfaces/reactInterfaces";
-import { GetAllEpisodesContextProvider } from "./GetAllEpisodesContext";
+import { GetAEpisodeContextProvider } from "./episode(s)/GetAEpisodeContext";
+import { GetAllEpisodesContextProvider } from "./episode(s)/GetAllEpisodesContext";
 
 const Providers = ({ children }: IChildren) => {
   return (
@@ -10,7 +10,7 @@ const Providers = ({ children }: IChildren) => {
       <GetAllCharactersProvider>
         <GetAllEpisodesContextProvider>
           <GetACharacterContextProvider>
-            <GetEpisodeContextProvider>{children}</GetEpisodeContextProvider>
+            <GetAEpisodeContextProvider>{children}</GetAEpisodeContextProvider>
           </GetACharacterContextProvider>
         </GetAllEpisodesContextProvider>
       </GetAllCharactersProvider>

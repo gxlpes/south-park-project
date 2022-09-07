@@ -1,9 +1,9 @@
 import { createContext } from "react";
-import api from "../services/api";
-import { IGetAllEpisodes } from "../interfaces/contextInterfaces";
+import api from "../../services/api";
+import { IGetAllEpisodes } from "../../interfaces/contextInterfaces";
 import { useEffect, useState } from "react";
-import { EpisodeDataSchema } from "../interfaces/episodeInterfaces";
-import { IChildren } from "../interfaces/reactInterfaces";
+import { EpisodeDataSchema } from "../../interfaces/episodeInterfaces";
+import { IChildren } from "../../interfaces/reactInterfaces";
 import { useNavigate } from "react-router-dom";
 
 export const GetAllEpisodesContext = createContext<IGetAllEpisodes>({} as IGetAllEpisodes);

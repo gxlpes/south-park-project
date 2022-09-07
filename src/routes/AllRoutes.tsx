@@ -1,12 +1,13 @@
 import Home from "../pages/Home";
-import CharacterInfo from "../pages/CharacterInfo";
+import CharacterInfo from "../pages/character(s)/CharacterInfo";
 import { Route, Routes } from "react-router-dom";
-import EpisodeInfo from "../pages/EpisodeInfo";
-import CharactersList from "../pages/CharactersList";
-import EpisodesListCharacter from "../pages/EpisodesListCharacter";
-import EpisodesList from "../pages/EpisodesList";
-import CharactersLayout from "../pages/CharactersLayout";
-import EpisodesLayout from "../pages/EpisodesLayout";
+import EpisodeInfo from "../pages/episode(s)/EpisodeInfo";
+import CharactersList from "../pages/character(s)/CharactersList";
+import EpisodesList from "../pages/episode(s)/EpisodesList";
+import CharactersLayout from "../pages/character(s)/CharactersLayout";
+import EpisodesLayout from "../pages/episode(s)/EpisodesLayout";
+import EpisodeListCharacters from "../pages/episode(s)/EpisodeListCharacters";
+import CharacterListEpisodes from "../pages/character(s)/CharacterListEpisodes";
 
 const AllRoutes = () => {
   return (
@@ -18,7 +19,9 @@ const AllRoutes = () => {
         <Route path=":id" element={<EpisodesList />} />
       </Route>
 
-      <Route path="/episode/:id" element={<EpisodeInfo />} />
+      <Route path="/episode/:id" element={<EpisodeInfo />}>
+        <Route path="characters" element={<EpisodeListCharacters />} />
+      </Route>
 
       <Route path="/characters" element={<CharactersLayout />}>
         <Route index element={<CharactersList />} />
@@ -26,7 +29,7 @@ const AllRoutes = () => {
       </Route>
 
       <Route path="/character/:id" element={<CharacterInfo />}>
-        <Route path="episodes" element={<EpisodesListCharacter />} />
+        <Route path="episodes" element={<CharacterListEpisodes />} />
       </Route>
 
       <Route path="*" element={<Home />} />

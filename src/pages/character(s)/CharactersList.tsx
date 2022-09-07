@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { GetAllCharactersContext } from "../contexts/GetAllCharactersContext";
+import { GetAllCharactersContext } from "../../contexts/character(s)/GetAllCharactersContext";
 import { useContext } from "react";
 
 const CharactersList: any = () => {

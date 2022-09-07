@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
-import { GetAllCharactersContext } from "../contexts/GetAllCharactersContext";
+import { GetAllCharactersContext } from "../../contexts/character(s)/GetAllCharactersContext";
 
 const CharactersLayout = () => {
   const { nextCharactersPage, prevCharactersPage, charactersPage } = useContext(GetAllCharactersContext);
