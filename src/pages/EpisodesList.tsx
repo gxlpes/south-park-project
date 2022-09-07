@@ -1,32 +1,15 @@
-import { GetACharacterContext } from "../contexts/GetACharacterContext";
+import { useNavigate } from "react-router-dom";
+import { GetAllEpisodesContext } from "../contexts/GetAllEpisodesContext";
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { GetEpisodeContext } from "../contexts/GetEpisodeContext";
 
-const Episodes = () => {
-  const { characterDetail } = useContext(GetACharacterContext);
-  const { setEpisodeId } = useContext(GetEpisodeContext);
-  const navigate = useNavigate();
+const EpisodesList: any = () => {
+  const { episodesList } = useContext(GetAllEpisodesContext);
 
-  const arrEpisodes = characterDetail.episodes;
-
-  const EpisodeInfoHandler = (el: string) => {
-    const id = el.split("/").pop();
-    navigate(`/episode/${id}`);
-    setEpisodeId(Number(id));
-  };
-
-  return (
+  return episodesList.map((el) => (
     <>
-      <ul>
-        {arrEpisodes.map((el: string) => (
-          <a onClick={() => EpisodeInfoHandler(el)}>
-            <li>{el}</li>
-          </a>
-        ))}
-      </ul>
+      <p>{el.name}</p>
     </>
-  );
+  ));
 };
 
-export default Episodes;
+export default EpisodesList;

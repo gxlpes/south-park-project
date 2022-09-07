@@ -1,27 +1,11 @@
-import { useContext, useEffect } from "react";
-import { GetAllCharactersContext } from "../contexts/GetAllCharactersContext";
-import { useNavigate, useParams } from "react-router-dom";
-import CharactersList from "./CharactersList";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
-  const { charactersList, nextPage, prevPage, page, setPage } = useContext(GetAllCharactersContext);
   const navigate = useNavigate();
-  const { p } = useParams();
-
-  useEffect(() => {
-    if (Number(p) != page) {
-      window.localStorage.setItem("pageAccess", `${p}`);
-      setPage(Number(p));
-      window.location.reload();
-    }
-  }, [p]);
-
   return (
     <>
-      <button onClick={() => navigate("/1")}>Home</button>
-      <CharactersList charactersList={charactersList} />
-      {page > 1 && <button onClick={prevPage}>Prev</button>}
-      <button onClick={nextPage}>Next</button>
+      <button onClick={() => navigate("/characters/1")}>Characters</button>
+      <button onClick={() => navigate("/episodes/1")}>Episodes</button>
     </>
   );
 };

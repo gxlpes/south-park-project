@@ -8,9 +8,9 @@ const EpisodeInfo = () => {
   console.log(episodeData);
   return (
     <>
-      <button onClick={() => navigate("/1")}>Home</button>
-      <p>Hahah</p>
-      <p>{episodeData.name}</p>
+      <button onClick={() => navigate("/")}>Home</button>
+      <h1>Episode Info</h1>
+      <p>{episodeData?.name}</p>
     </>
   );
 };

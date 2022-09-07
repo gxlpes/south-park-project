@@ -1,13 +1,13 @@
 import { createContext, useEffect, useState } from "react";
 import { IChildren } from "../interfaces/reactInterfaces";
-import { IGetEpisode } from "../interfaces/contextInterfaces";
+import { IGetAEpisode } from "../interfaces/contextInterfaces";
 import api from "../services/api";
 import { EpisodeDataSchema } from "../interfaces/episodeInterfaces";
 
-export const GetEpisodeContext = createContext<IGetEpisode>({} as IGetEpisode);
+export const GetEpisodeContext = createContext<IGetAEpisode>({} as IGetAEpisode);
 
 export const GetEpisodeContextProvider = ({ children }: IChildren) => {
-  const [episodeData, setEpisodeData] = useState<EpisodeDataSchema[]>([]);
+  const [episodeData, setEpisodeData] = useState<EpisodeDataSchema>();
   const [episodeId, setEpisodeId] = useState(0);
 
   useEffect(() => {

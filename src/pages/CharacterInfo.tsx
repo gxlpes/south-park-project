@@ -1,7 +1,8 @@
 import { useContext, useEffect } from "react";
-import { useParams, Routes, Route, Link, useNavigate } from "react-router-dom";
+import { useParams, Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
 import { GetACharacterContext } from "../contexts/GetACharacterContext";
-import EpisodesList from "./EpisodesList";
+import EpisodesListCharacter from "./EpisodesListCharacter";
+import EpisodesList from "./EpisodesListCharacter";
 
 const CharacterInfo = () => {
   const { characterDetail, setId } = useContext(GetACharacterContext);
@@ -14,15 +15,13 @@ const CharacterInfo = () => {
 
   return (
     <>
-      <button onClick={() => navigate("/1")}>Home</button>
+      <button onClick={() => navigate("/")}>Home</button>
       <p>{characterDetail.id}</p>
       <p>{characterDetail.name}</p>
       <p>{characterDetail.age ? characterDetail.age : "No data"}</p>
       <p>{characterDetail.occupation}</p>
-      <Link to={`/characters/${id}/episodes`}>Episodes</Link>
-      <Routes>
-        <Route path={`/episodes`} element={<EpisodesList />} />
-      </Routes>
+      <Link to={`episodes`}>Episodes</Link>
+      <Outlet />
     </>
   );
 };
