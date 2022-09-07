@@ -1,4 +1,4 @@
-import Home from "../pages/Home";
+import Home from "../pages/home/Home";
 import CharacterInfo from "../pages/character(s)/CharacterInfo";
 import { Route, Routes } from "react-router-dom";
 import EpisodeInfo from "../pages/episode(s)/EpisodeInfo";
