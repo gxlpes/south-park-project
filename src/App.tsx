@@ -1,9 +1,21 @@
-import { useEffect, useState } from "react";
 import AllRoutes from "./routes/AllRoutes";
-import api from "./services/api";
+import { useContext } from "react";
+import GlobalStyles from "./styles/GlobalStyles";
+
+import { ThemeProvider } from "styled-components";
+import { ThemesContext } from "./contexts/ThemesContext";
 
 function App() {
-  return <AllRoutes />;
+  const { theme } = useContext(ThemesContext);
+
+  return (
+    <>
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <AllRoutes />
+      </ThemeProvider>
+    </>
+  );
 }
 
 export default App;

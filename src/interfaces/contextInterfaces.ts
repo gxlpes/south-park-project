@@ -28,3 +28,16 @@ export interface IGetAEpisode {
   setEpisodeId: Dispatch<SetStateAction<number>>;
   episodeDetail?: EpisodeDataSchema;
 }
+
+export interface IFindSomething {
+  setSearchCategory: Dispatch<SetStateAction<string>>;
+  setSearchTerm: Dispatch<SetStateAction<string>>;
+  searchResult: any;
+  searchCategory: any;
+  searchTerm: any;
+}
+
+export interface ITheme {
+  theme: any;
+  toggleTheme: () => void;
+}

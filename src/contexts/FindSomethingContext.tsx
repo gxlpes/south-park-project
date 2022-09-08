@@ -2,8 +2,9 @@ import { createContext } from "react";
 import api from "../services/api";
 import { useEffect, useState } from "react";
 import { IChildren } from "../interfaces/reactInterfaces";
+import { IFindSomething } from "../interfaces/contextInterfaces";
 
-export const FindSomethingContext = createContext({});
+export const FindSomethingContext = createContext<IFindSomething>({} as IFindSomething);
 
 export const FindSomethingContextProvider = ({ children }: IChildren) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -22,7 +23,7 @@ export const FindSomethingContextProvider = ({ children }: IChildren) => {
   }, [searchTerm]);
 
   return (
-    <FindSomethingContext.Provider value={{ setSearchTerm, setSearchCategory, searchResult }}>
+    <FindSomethingContext.Provider value={{ setSearchTerm, searchTerm, setSearchCategory, searchCategory, searchResult }}>
       {children}
     </FindSomethingContext.Provider>
   );

@@ -1,6 +1,8 @@
+import { Route, Routes } from "react-router-dom";
+import { useContext } from "react";
+
 import Home from "../pages/home/Home";
 import CharacterInfo from "../pages/character(s)/CharacterInfo";
-import { Route, Routes } from "react-router-dom";
 import EpisodeInfo from "../pages/episode(s)/EpisodeInfo";
 import CharactersList from "../pages/character(s)/CharactersList";
 import EpisodesList from "../pages/episode(s)/EpisodesList";
@@ -13,7 +15,6 @@ const AllRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-
       <Route path="/episodes" element={<EpisodesLayout />}>
         <Route index element={<EpisodesList />} />
         <Route path=":id" element={<EpisodesList />} />
@@ -31,8 +32,6 @@ const AllRoutes = () => {
       <Route path="/character/:id" element={<CharacterInfo />}>
         <Route path="episodes" element={<CharacterListEpisodes />} />
       </Route>
-
-      <Route path="*" element={<Home />} />
     </Routes>
   );
 };

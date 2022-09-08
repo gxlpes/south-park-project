@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = (props: any) => {
   const navigate = useNavigate();
   return (
     <>
