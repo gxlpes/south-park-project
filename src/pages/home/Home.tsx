@@ -23,7 +23,7 @@ const Home = () => {
           uncheckedIcon={false}
           offColor={colors.primary}
           onColor={colors.textlight}
-          offHandleColor={colors.green}
+          offHandleColor={colors.blue}
           onHandleColor={colors.orange}
         />
         <h1>SOUTH PARK DATA</h1>

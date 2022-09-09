@@ -24,10 +24,10 @@ const Navbar = () => {
           </Link>
         </LogoContainer>
         <LinksContainer>
-          <NavLink style={{ color: colors.green }} to="/characters/1">
+          <NavLink style={{ color: colors.green }} to="/characters">
             Characters
           </NavLink>
-          <NavLink style={{ color: colors.orange }} to="/episodes/1">
+          <NavLink style={{ color: colors.orange }} to="/episodes">
             Episodes
           </NavLink>
         </LinksContainer>

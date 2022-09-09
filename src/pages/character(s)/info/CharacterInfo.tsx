@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import { useParams, Link, useNavigate, Outlet } from "react-router-dom";
-import { GetACharacterContext } from "../../contexts/character(s)/GetACharacterContext";
+import { GetACharacterContext } from "../../../contexts/character(s)/GetACharacterContext";
 
 const CharacterInfo = () => {
   const { characterDetail, setCharacterId } = useContext(GetACharacterContext);

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
-export const ContentSection = styled.div`
+export const Content = styled.div`
   max-width: 75rem;
+  margin-inline: auto;
 `;

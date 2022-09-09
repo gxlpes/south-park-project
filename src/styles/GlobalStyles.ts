@@ -18,6 +18,10 @@ export default createGlobalStyle`
   padding: 0;
   box-sizing: border-box;
   outline: 0;
+  a {
+    color: inherit;
+  }
+  overflow-x: hidden;
 }
 
   body {
@@ -33,6 +37,16 @@ export default createGlobalStyle`
 
   button {
     cursor: pointer;
+    width: 7rem;
+    height: 2rem;
+    background-color: ${(props) => props.theme.colors.primary};
+    color: ${(props) => props.theme.colors.textdark};
+    border-radius: 2px;
+    border: none;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      opacity: 0.5;
+    }
   }
 
   a {
@@ -42,11 +56,9 @@ export default createGlobalStyle`
   ::-webkit-scrollbar {
     width: 10px;
     }
-    ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px grey; 
-    }
+
     
     ::-webkit-scrollbar-thumb {
-    background: rgb(32,141,69);
+    background: ${(props) => props.theme.colors.primary}
     }
 `;

@@ -11,6 +11,8 @@ export const NavbarSection = styled.nav`
 
 export const LogoContainer = styled.div`
   p {
+    padding: 0;
+    margin: 0;
     font-family: "South Park";
     font-size: var(--fs-md);
     color: ${(props) => props.theme.colors.textdark};
@@ -22,11 +24,11 @@ export const LinksContainer = styled.div`
   display: flex;
   gap: 1rem;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 
   .active {
     padding: 0.25rem 0.5rem;
     border-radius: 2px;
-    background-color: ${(props) => props.theme.colors.textdark};
+    background-color: ${(props) => props.theme.colors.background};
   }
 `;

@@ -1,7 +1,7 @@
-import { GetACharacterContext } from "../../contexts/character(s)/GetACharacterContext";
+import { GetACharacterContext } from "../../../contexts/character(s)/GetACharacterContext";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { GetAEpisodeContext } from "../../contexts/episode(s)/GetAEpisodeContext";
+import { GetAEpisodeContext } from "../../../contexts/episode(s)/GetAEpisodeContext";
 
 const CharacterListEpisodes = () => {
   const { characterDetail } = useContext(GetACharacterContext);
