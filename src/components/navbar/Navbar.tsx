@@ -1,15 +1,16 @@
 import { useContext } from "react";
-import { useNavigate, useLocation, Link, NavLink } from "react-router-dom";
+import { useLocation, Link, NavLink } from "react-router-dom";
 import { ThemeContext } from "styled-components";
 import { ThemesContext } from "../../contexts/ThemesContext";
 import { LinksContainer, LogoContainer, NavbarSection } from "./Styles";
 import Switch from "react-switch";
+import { GetAllCharactersContext } from "../../contexts/character(s)/GetAllCharactersContext";
 
 const Navbar = () => {
-  const navigate = useNavigate();
   const location = useLocation();
   const { toggleTheme } = useContext(ThemesContext);
   const { title, colors } = useContext(ThemeContext);
+  const { setCharactersPage, charactersPage } = useContext(GetAllCharactersContext);
 
   if (location.pathname === "/") {
     return null;
@@ -20,14 +21,14 @@ const Navbar = () => {
       <NavbarSection>
         <LogoContainer>
           <Link to="/">
-            <p>South Park Data</p>
+            <p>SPD</p>
           </Link>
         </LogoContainer>
         <LinksContainer>
-          <NavLink style={{ color: colors.green }} to="/characters">
+          <NavLink style={{ color: colors.green }} to={`/characters/${1}`} onClick={() => setCharactersPage(1)}>
             Characters
           </NavLink>
-          <NavLink style={{ color: colors.orange }} to="/episodes">
+          <NavLink style={{ color: colors.orange }} to="/episodes/1">
             Episodes
           </NavLink>
         </LinksContainer>

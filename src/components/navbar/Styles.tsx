@@ -25,10 +25,4 @@ export const LinksContainer = styled.div`
   gap: 1rem;
   align-items: center;
   justify-content: flex-start;
-
-  .active {
-    padding: 0.25rem 0.5rem;
-    border-radius: 2px;
-    background-color: ${(props) => props.theme.colors.background};
-  }
 `;

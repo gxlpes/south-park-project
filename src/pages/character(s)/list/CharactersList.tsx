@@ -13,7 +13,9 @@ const CharactersList: any = () => {
           {charactersList.map((el) => (
             <Link to={`/character/${el.id}`}>
               <Item>
-                <img src={el.image} />
+                <div className="image">
+                  <img src={el.image} />
+                </div>
                 <div className="main-info">
                   <h2>{el.name}</h2>
                   <p>Occupation: {el.occupation}</p>
