@@ -1,10 +1,9 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { GetAllCharactersContext } from "../../../contexts/character(s)/GetAllCharactersContext";
 import { useContext } from "react";
 import { Item, ListContainer, ListSection } from "./Styles";
 
 const CharactersList: any = () => {
-  const navigate = useNavigate();
   const { charactersList } = useContext(GetAllCharactersContext);
 
   return (
@@ -14,6 +13,7 @@ const CharactersList: any = () => {
           {charactersList.map((el) => (
             <Link to={`/character/${el.id}`}>
               <Item>
+                <img src={el.image} />
                 <div className="main-info">
                   <h2>{el.name}</h2>
                   <p>Occupation: {el.occupation}</p>

@@ -1,6 +1,6 @@
 import { useNavigate, useParams, Link, Outlet } from "react-router-dom";
 import { useContext, useEffect } from "react";
-import { GetAEpisodeContext } from "../../contexts/episode(s)/GetAEpisodeContext";
+import { GetAEpisodeContext } from "../../../contexts/episode(s)/GetAEpisodeContext";
 
 const EpisodeInfo = () => {
   const navigate = useNavigate();

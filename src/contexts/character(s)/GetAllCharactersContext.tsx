@@ -1,3 +1,5 @@
+import axios from "axios";
+import { stringify } from "querystring";
 import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CharacterSchema, PageSchema } from "../../interfaces/characterInterfaces";
@@ -10,24 +12,29 @@ export const GetAllCharactersContext = createContext<IGetAllCharacters>({} as IG
 export const GetAllCharactersProvider = ({ children }: IChildren) => {
   let navigate = useNavigate();
   const [charactersList, setCharactersList] = useState<CharacterSchema[]>([]);
-  const [charactersPage, setCharactersPage] = useState(() => {
-    if (window.localStorage.getItem("pageAccess")) {
-      return Number(window.localStorage.getItem("pageAccess"));
-    } else {
-      return 1;
-    }
-  });
+  const [charactersPage, setCharactersPage] = useState(1);
+
+  interface imageSource {
+    thumbail: string;
+  }
 
   const storage = window.localStorage.getItem("pageAccess");
-  let arrChar: string[] = [];
+
   useEffect(() => {
     api
       .get(`/characters?page=${charactersPage}`)
-      .then((res) => {
+      .then(async (res) => {
+        await Promise.all(
+          res.data.data.map(async (element: any) => {
+            const url = `https://southpark.fandom.com/api.php?action=query&origin=*&titles=${element.name}&prop=pageimages&format=json`;
+            const res = await axios.get(url);
+            const imageSource = Object.values(res.data.query.pages)[0]["thumbnail"]["source"].split("/revision");
+            element.image = imageSource[0];
+            console.log(element);
+          })
+        );
         setCharactersList(res.data.data);
-        console.log(res.data.data);
         window.localStorage.setItem("pageAccess", `${charactersPage}`);
-        return res;
       })
       .catch((err) => console.error(err));
   }, [storage, charactersPage]);
@@ -35,11 +42,13 @@ export const GetAllCharactersProvider = ({ children }: IChildren) => {
   const nextCharactersPage = () => {
     setCharactersPage((prev) => prev + 1);
     navigate(`characters/${charactersPage + 1}`);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const prevCharactersPage = () => {
     setCharactersPage((prev) => prev - 1);
     navigate(`characters/${charactersPage - 1}`);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (

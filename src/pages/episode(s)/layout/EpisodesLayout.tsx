@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
-import { GetAllEpisodesContext } from "../../contexts/episode(s)/GetAllEpisodesContext";
+import { GetAllEpisodesContext } from "../../../contexts/episode(s)/GetAllEpisodesContext";
 
 const EpisodesLayout = () => {
   const { nextEpisodesPage, prevEpisodesPage, episodesPage } = useContext(GetAllEpisodesContext);

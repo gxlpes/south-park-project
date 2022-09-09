@@ -3,12 +3,12 @@ import { useContext } from "react";
 
 import Home from "../pages/home/Home";
 import CharacterInfo from "../pages/character(s)/info/CharacterInfo";
-import EpisodeInfo from "../pages/episode(s)/EpisodeInfo";
+import EpisodeInfo from "../pages/episode(s)/info/EpisodeInfo";
 import CharactersList from "../pages/character(s)/list/CharactersList";
-import EpisodesList from "../pages/episode(s)/EpisodesList";
+import EpisodesList from "../pages/episode(s)/list/EpisodesList";
 import CharactersLayout from "../pages/character(s)/layout/CharactersLayout";
-import EpisodesLayout from "../pages/episode(s)/EpisodesLayout";
-import EpisodeListCharacters from "../pages/episode(s)/EpisodeListCharacters";
+import EpisodesLayout from "../pages/episode(s)/layout/EpisodesLayout";
+import EpisodeListCharacters from "../pages/episode(s)/characters/EpisodeListCharacters";
 import CharacterListEpisodes from "../pages/character(s)/episodes/CharacterListEpisodes";
 import Navbar from "../components/navbar/Navbar";
 import { Content } from "../styles/Content";

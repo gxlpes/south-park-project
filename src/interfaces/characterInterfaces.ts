@@ -21,6 +21,7 @@ export interface CharacterSchema {
   relatives: Relative[];
   episodes: string;
   arrId: number;
+  image: string;
 }
 
 export interface Relative {

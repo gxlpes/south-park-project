@@ -10,7 +10,7 @@ export const ContainerButtons = styled.div`
   button {
     color: ${(props) => props.theme.colors.textlight};
     &:active {
-      transform: scale(1.2);
+      transform: scale(1.1);
     }
   }
 `;

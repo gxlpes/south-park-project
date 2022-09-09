@@ -1,22 +1,6 @@
 import styled from "styled-components";
 
-export const ListContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex-direction: center;
-  align-items: center;
-`;
-
-export const ListSection = styled.ul`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 2rem;
-  width: max-content;
-`;
-
-export const Item = styled.li`
+export const Item = styled.div`
   width: 20rem;
   list-style: none;
   text-align: left;
@@ -29,11 +13,7 @@ export const Item = styled.li`
   gap: 1rem;
   transition: all 0.2s ease-in-out;
   color: ${(props) => props.theme.colors.textdark};
-
-  img {
-    width: 4rem;
-    height: auto;
-  }
+  flex-direction: column;
 
   &:hover {
     background-color: ${(props) => props.theme.colors.cyan};

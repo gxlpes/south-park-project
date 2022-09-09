@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { GetAllEpisodesContext } from "../../contexts/episode(s)/GetAllEpisodesContext";
+import { GetAllEpisodesContext } from "../../../contexts/episode(s)/GetAllEpisodesContext";
 import { useContext } from "react";
 
 const EpisodesList: any = () => {
