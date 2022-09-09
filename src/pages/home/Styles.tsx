@@ -9,12 +9,14 @@ export const HomeSection = styled.div`
   gap: 2rem;
 
   @font-face {
-    font-family: "AssistantRegular";
+    font-family: "South Park";
     src: url("../assets/fonts/southpark.tff");
   }
 
   h1 {
-    color: purple;
+    color: ${(props) => props.theme.colors.textdark};
+    font-family: "South Park";
+    font-size: var(--fs-xxl);
   }
 
   .container-buttons {
@@ -25,8 +27,8 @@ export const HomeSection = styled.div`
   button {
     width: 7rem;
     height: 2rem;
-    background-color: ${(props) => props.theme.colors.background};
-    color: ${(props) => props.theme.colors.text};
+    background-color: ${(props) => props.theme.colors.primary};
+    color: ${(props) => props.theme.colors.textdark};
     border-radius: 2px;
     border: none;
     transition: all 0.2s ease-in-out;

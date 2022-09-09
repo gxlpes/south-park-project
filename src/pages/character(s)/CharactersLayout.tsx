@@ -7,10 +7,6 @@ const CharactersLayout = () => {
 
   return (
     <>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/episodes">Episodes</Link>
-      </nav>
       <Outlet />
       {charactersPage > 1 && <button onClick={prevCharactersPage}>Previous</button>}
       <button onClick={nextCharactersPage}>Next</button>

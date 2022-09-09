@@ -7,10 +7,6 @@ const EpisodesLayout = () => {
 
   return (
     <>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/characters">Characters</Link>
-      </nav>
       <Outlet />
       {episodesPage > 1 && <button onClick={prevEpisodesPage}>Previous</button>}
       <button onClick={nextEpisodesPage}>Next</button>
