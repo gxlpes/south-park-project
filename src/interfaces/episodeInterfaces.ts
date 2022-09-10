@@ -3,7 +3,7 @@ export interface EpisodeDataSchema {
   name: string;
   season: number;
   episode: number;
-  air_date: Date;
+  air_date: string;
   wiki_url: string;
   thumbnail_url: string;
   description: string;

@@ -15,7 +15,7 @@ export const GetAllEpisodesContextProvider = ({ children }: IChildren) => {
   useEffect(() => {
     api
       .get(`/episodes?page=${episodesPage}`)
-      .then((res) => {
+      .then(async (res) => {
         setEpisodesList(res.data.data);
         res.data.data.map((el) => {
           const image = el.thumbnail_url.split("/revision");
@@ -30,11 +30,13 @@ export const GetAllEpisodesContextProvider = ({ children }: IChildren) => {
   const nextEpisodesPage = () => {
     setEpisodesPage((prev) => prev + 1);
     navigate(`episodes/${episodesPage + 1}`);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const prevEpisodesPage = () => {
     setEpisodesPage((prev) => prev - 1);
     navigate(`episodes/${episodesPage - 1}`);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (

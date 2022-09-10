@@ -2,6 +2,7 @@ import { GetACharacterContext } from "../../../contexts/character(s)/GetACharact
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { GetAEpisodeContext } from "../../../contexts/episode(s)/GetAEpisodeContext";
+import { LinkCharacterItem, ListCharacters } from "./Styles";
 
 const EpisodesListCharacter = () => {
   const { episodeDetail } = useContext(GetAEpisodeContext);
@@ -18,13 +19,13 @@ const EpisodesListCharacter = () => {
 
   return (
     <>
-      <ul>
+      <ListCharacters>
         {arrCharacters?.map((el: string) => (
           <a key={el} onClick={() => EpisodeInfoHandler(el)}>
-            <li>{el}</li>
+            <LinkCharacterItem>Character {el.split("/").pop()}</LinkCharacterItem>
           </a>
         ))}
-      </ul>
+      </ListCharacters>
     </>
   );
 };
