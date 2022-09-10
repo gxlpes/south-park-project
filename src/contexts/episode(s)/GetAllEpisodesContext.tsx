@@ -11,7 +11,14 @@ export const GetAllEpisodesContext = createContext<IGetAllEpisodes>({} as IGetAl
 export const GetAllEpisodesContextProvider = ({ children }: IChildren) => {
   const navigate = useNavigate();
   const [episodesList, setEpisodesList] = useState<EpisodeDataSchema[]>([]);
-  const [episodesPage, setEpisodesPage] = useState(1);
+  const [episodesPage, setEpisodesPage] = useState(() => {
+    if (window.localStorage.getItem("pageAccess")) {
+      return Number(window.localStorage.getItem("pageAccess"));
+    } else {
+      return 1;
+    }
+  });
+
   useEffect(() => {
     api
       .get(`/episodes?page=${episodesPage}`)

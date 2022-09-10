@@ -6,4 +6,5 @@ export const ErrorSection = styled.div`
   align-items: center;
   margin-top: 10rem;
   gap: 1rem;
+  color: ${(props) => props.theme.colors.textlight};
 `;

@@ -12,7 +12,13 @@ export const GetAllCharactersContext = createContext<IGetAllCharacters>({} as IG
 export const GetAllCharactersProvider = ({ children }: IChildren) => {
   let navigate = useNavigate();
   const [charactersList, setCharactersList] = useState<CharacterSchema[]>([]);
-  const [charactersPage, setCharactersPage] = useState(1);
+  const [charactersPage, setCharactersPage] = useState(() => {
+    if (window.localStorage.getItem("pageAccess")) {
+      return Number(window.localStorage.getItem("pageAccess"));
+    } else {
+      return 1;
+    }
+  });
 
   interface imageSource {
     thumbail: string;
