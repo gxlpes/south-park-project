@@ -12,24 +12,48 @@ const CharacterInfo = () => {
   const c = charactersList[arrIndex];
 
   useEffect(() => {
-    setCharacterId(Number(id));
+    if (c === undefined) {
+      console.log("setou");
+      setCharacterId(Number(id));
+    }
   }, [id]);
 
-  return (
-    <>
-      <Item>
-        <p>{characterDetail.id}</p>
-        <p>{characterDetail.name}</p>
-        <p>{characterDetail.age ? characterDetail.age : "No data"}</p>
-        <p>{characterDetail.occupation}</p>
-        <p>{characterDetail.sex}</p>
-        <p>{characterDetail.hair_color}</p>
+  if (charactersList[arrIndex] !== undefined) {
+    console.log("haha");
+    return (
+      <>
+        <Item>
+          <img src={c.image} />
+          <p>{c.id}</p>
+          <p>{c.name}</p>
+          <p>{c.age ? c.age : "No data"}</p>
+          <p>{c.occupation}</p>
+          <p>{c.sex}</p>
+          <p>{c.hair_color}</p>
 
-        <NavLink to={`episodes`}>Episodes ▼</NavLink>
-      </Item>
-      <Outlet />
-    </>
-  );
+          <NavLink to={`episodes`}>Episodes ▼</NavLink>
+        </Item>
+        <Outlet />
+      </>
+    );
+  } else {
+    return (
+      <>
+        <Item>
+          <img src={characterDetail.image} />
+          <p>{characterDetail.id}</p>
+          <p>{characterDetail.name}</p>
+          <p>{characterDetail.age ? characterDetail.age : "No data"}</p>
+          <p>{characterDetail.occupation}</p>
+          <p>{characterDetail.sex}</p>
+          <p>{characterDetail.hair_color}</p>
+
+          <NavLink to={`episodes`}>Episodes ▼</NavLink>
+        </Item>
+        <Outlet />
+      </>
+    );
+  }
 };
 
 export default CharacterInfo;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { opacityEnter } from "../GlobalStyles";
 
 export const Item = styled.div`
   margin-top: 5rem;
@@ -15,6 +16,7 @@ export const Item = styled.div`
   gap: 1rem;
   transition: all 0.2s ease-in-out;
   color: ${(props) => props.theme.colors.textdark};
+  animation: ${opacityEnter} 0.4s ease-in-out;
 
   &:hover {
     background-color: ${(props) => props.theme.colors.cyan};
