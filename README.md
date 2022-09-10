@@ -1,6 +1,6 @@
 # South Park Project
 
-[<b>Live demo</b>](https://jovial-muffin-170336.netlify.app/1)
+[<b>Live demo</b>](https://jovial-muffin-170336.netlify.app)
 
 Project created to practice multiple aspects of TypeScript and interfaces/types. The website uses Axios to fetch data from the South Park API and displays information about the characters and about the episodes of the series. I learnt about different components and their aspects with TypeScript.
 
