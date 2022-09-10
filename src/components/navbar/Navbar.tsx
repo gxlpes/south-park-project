@@ -5,14 +5,16 @@ import { ThemesContext } from "../../contexts/character(s)/ThemesContext";
 import { LinksContainer, LogoContainer, NavbarSection } from "./Styles";
 import Switch from "react-switch";
 import { GetAllCharactersContext } from "../../contexts/character(s)/GetAllCharactersContext";
+import { GetAllEpisodesContext } from "../../contexts/episode(s)/GetAllEpisodesContext";
 
 const Navbar = () => {
   const location = useLocation();
   const { toggleTheme } = useContext(ThemesContext);
   const { title, colors } = useContext(ThemeContext);
-  const { setCharactersPage, charactersPage } = useContext(GetAllCharactersContext);
+  const { setCharactersPage } = useContext(GetAllCharactersContext);
+  const { setEpisodesPage } = useContext(GetAllEpisodesContext);
 
-  if (location.pathname === "/" || location.pathname === "*") {
+  if (location.pathname === "/") {
     return null;
   }
 
@@ -28,7 +30,7 @@ const Navbar = () => {
           <NavLink style={{ color: colors.green }} to={`/characters/${1}`} onClick={() => setCharactersPage(1)}>
             Characters
           </NavLink>
-          <NavLink style={{ color: colors.orange }} to="/episodes/1">
+          <NavLink style={{ color: colors.orange }} onClick={() => setEpisodesPage(1)} to="/episodes/1">
             Episodes
           </NavLink>
         </LinksContainer>
