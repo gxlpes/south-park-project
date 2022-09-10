@@ -1,6 +1,7 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { GetAllEpisodesContext } from "../../../contexts/episode(s)/GetAllEpisodesContext";
 import { useContext } from "react";
+import { Item, ListContainer, ListSection } from "./Styles";
 
 const EpisodesList: any = () => {
   const { episodesList } = useContext(GetAllEpisodesContext);
@@ -8,9 +9,23 @@ const EpisodesList: any = () => {
 
   return episodesList.map((el) => (
     <>
-      <p>
-        {el.name} <button onClick={() => navigate(`/episode/${el.id}`)}>Info</button>
-      </p>
+      <ListContainer>
+        <ListSection>
+          <Link to={`/episode/${el.id}`}>
+            <Item>
+              <div className="image">
+                <img src={el.thumbnail_url} />
+              </div>
+              <div className="info">
+                <p>{el.name}</p>
+                <p>
+                  E{el.episode}S{el.season}
+                </p>
+              </div>
+            </Item>
+          </Link>
+        </ListSection>
+      </ListContainer>
     </>
   ));
 };

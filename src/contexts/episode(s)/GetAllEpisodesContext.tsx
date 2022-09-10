@@ -17,7 +17,11 @@ export const GetAllEpisodesContextProvider = ({ children }: IChildren) => {
       .get(`/episodes?page=${episodesPage}`)
       .then((res) => {
         setEpisodesList(res.data.data);
-        console.log(res.data.data);
+        res.data.data.map((el) => {
+          const image = el.thumbnail_url.split("/revision");
+          const fixedImage = image[0];
+          el.thumbnail_url = fixedImage;
+        });
         return res;
       })
       .catch((err) => console.error(err));
