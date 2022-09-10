@@ -1,23 +1,34 @@
 import styled from "styled-components";
+import { opacityEnter } from "../GlobalStyles";
 
 export const ListContainer = styled.div`
+  margin-top: 3rem;
   display: flex;
   flex-direction: column;
   flex-direction: center;
   align-items: center;
+  animation: ${opacityEnter} 0.4s ease-in-out;
 `;
 
 export const ListSection = styled.ul`
+  padding-block: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
   margin-top: 2rem;
   flex-wrap: wrap;
+
+  a {
+    filter: drop-shadow(rgba(0, 0, 0, 0.1) 4px 4px 12px);
+
+    &:hover {
+      filter: drop-shadow(${(props) => props.theme.colors.yellow} 0px 0px 5px);
+    }
+  }
 `;
 
 export const Item = styled.li`
-  border: 2px solid ${(props) => props.theme.colors.primary};
   overflow-y: hidden;
   display: flex;
   align-items: center;
@@ -27,11 +38,11 @@ export const Item = styled.li`
   height: 12rem;
   list-style: none;
   text-align: left;
+  color: ${(props) => props.theme.colors.textdark};
   background-color: ${(props) => props.theme.colors.primary};
   padding: 1rem 1rem 1rem 0rem;
   border-radius: 5px;
   transition: all 0.2s ease-in-out;
-  color: ${(props) => props.theme.colors.textdark};
 
   &:hover {
     background-color: ${(props) => props.theme.colors.cyan};
@@ -50,7 +61,11 @@ export const Item = styled.li`
       width: 4.2rem;
       height: auto;
       background-color: white;
-      border-radius: 7px;
+    }
+
+    .big-img {
+      width: 100%;
+      height: 12rem;
     }
   }
 

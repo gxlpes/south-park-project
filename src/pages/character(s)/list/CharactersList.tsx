@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { GetAllCharactersContext } from "../../../contexts/character(s)/GetAllCharactersContext";
 import { useContext } from "react";
-import { Item, ListContainer, ListSection } from "./Styles";
+import { Item, ListContainer, ListSection } from "../../../styles/ui/Lists";
 
 const CharactersList: any = () => {
   const { charactersList } = useContext(GetAllCharactersContext);
@@ -18,8 +18,21 @@ const CharactersList: any = () => {
                 </div>
                 <div className="main-info">
                   <h2>{el.name}</h2>
-                  <p>Occupation: {el.occupation}</p>
-                  <p>Episodes: {el.episodes.length}</p>
+                  <p>
+                    <b> Occupation: </b>
+                    {el.occupation ? el.occupation : "None"}
+                  </p>
+                  <p>
+                    <b> Episodes: </b>
+                    {el.episodes.length}
+                  </p>
+                  <p>
+                    <b> Religion:</b> {el.religion ? el.religion : "None"}
+                  </p>
+                  <p>
+                    <b> Relatives: </b>
+                    {el.relatives.length ? el.relatives.length : "None"}
+                  </p>
                 </div>
                 <div className="side-info">
                   <p>#{el.id}</p>

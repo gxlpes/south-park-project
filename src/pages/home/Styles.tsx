@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { opacityEnter, upEnter } from "../../styles/GlobalStyles";
 
 export const HomeSection = styled.div`
   margin-top: 7rem;
@@ -7,6 +8,7 @@ export const HomeSection = styled.div`
   justify-items: center;
   align-items: center;
   gap: 2rem;
+  animation: ${opacityEnter} 0.4s ease-in-out;
 
   @font-face {
     font-family: "South Park";
@@ -22,18 +24,5 @@ export const HomeSection = styled.div`
   .container-buttons {
     display: flex;
     gap: 1rem;
-  }
-
-  button {
-    width: 7rem;
-    height: 2rem;
-    background-color: ${(props) => props.theme.colors.primary};
-    color: ${(props) => props.theme.colors.textdark};
-    border-radius: 2px;
-    border: none;
-    transition: all 0.2s ease-in-out;
-    &:hover {
-      opacity: 0.5;
-    }
   }
 `;

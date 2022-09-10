@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ListCharacters = styled.ul`
+export const List = styled.ul`
   margin-block: 2rem;
   display: flex;
   justify-content: center;
@@ -8,7 +8,7 @@ export const ListCharacters = styled.ul`
   gap: 1rem;
 `;
 
-export const LinkCharacterItem = styled.li`
+export const ListItem = styled.li`
   background-color: ${(props) => props.theme.colors.primary};
   color: ${(props) => props.theme.colors.textdark};
   border-radius: 4px;

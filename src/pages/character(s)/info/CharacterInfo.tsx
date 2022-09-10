@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import { useParams, Link, Outlet, NavLink } from "react-router-dom";
 import { GetACharacterContext } from "../../../contexts/character(s)/GetACharacterContext";
 import { GetAllCharactersContext } from "../../../contexts/character(s)/GetAllCharactersContext";
-import { Item } from "./Styles";
+import { Item } from "../../../styles/ui/Info";
 
 const CharacterInfo = () => {
   const { characterDetail, setCharacterId } = useContext(GetACharacterContext);
@@ -18,7 +18,6 @@ const CharacterInfo = () => {
   return (
     <>
       <Item>
-        <img src={c.image} />
         <p>{characterDetail.id}</p>
         <p>{characterDetail.name}</p>
         <p>{characterDetail.age ? characterDetail.age : "No data"}</p>

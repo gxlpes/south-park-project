@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { ThemeContext } from "styled-components";
 import { GetAllEpisodesContext } from "../../../contexts/episode(s)/GetAllEpisodesContext";
-import { ContainerButtons } from "./Styles";
+import { ContainerButtons } from "../../../styles/ui/Layout";
 
 const EpisodesLayout = () => {
   const { nextEpisodesPage, prevEpisodesPage, episodesPage } = useContext(GetAllEpisodesContext);

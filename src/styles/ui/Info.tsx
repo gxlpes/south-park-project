@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Item = styled.div`
-  margin-top: 2rem;
+  margin-top: 5rem;
   width: 20rem;
   list-style: none;
   background-color: ${(props) => props.theme.colors.primary};
@@ -21,7 +21,7 @@ export const Item = styled.div`
   }
 
   img {
-    width: 100%;
+    width: 5rem;
   }
 
   .active {

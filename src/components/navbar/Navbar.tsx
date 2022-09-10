@@ -42,8 +42,8 @@ const Navbar = () => {
             checked={title === "dark"}
             checkedIcon={false}
             uncheckedIcon={false}
-            offColor={colors.background}
-            onColor={colors.background}
+            offColor={colors.primary}
+            onColor={colors.primary}
             offHandleColor={colors.blue}
             onHandleColor={colors.cyan}
           />
