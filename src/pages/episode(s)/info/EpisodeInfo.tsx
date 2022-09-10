@@ -38,13 +38,22 @@ const EpisodeInfo = () => {
     return (
       <>
         <Item>
-          <img src={episodeDetail?.thumbnail_url} />
-          <p>{episodeDetail?.name}</p>
-          <p>{episodeDetail?.air_date}</p>
-          <p>
-            E{episodeDetail?.episode}S{episodeDetail?.season}
-          </p>
-          <p>{episodeDetail?.description}</p>
+          <img className="big-image" src={episodeDetail?.thumbnail_url} />
+          <div className="info">
+            <p>
+              <b>Name:</b>
+              {episodeDetail?.name}
+            </p>
+            <p>
+              <b>Air date:</b>
+              {episodeDetail?.air_date}
+            </p>
+            <p>
+              E{episodeDetail?.episode}S{episodeDetail?.season}
+            </p>
+            <p>{episodeDetail?.description}</p>
+          </div>
+
           <Link to={`characters`}>Characters ▼</Link>
         </Item>
 

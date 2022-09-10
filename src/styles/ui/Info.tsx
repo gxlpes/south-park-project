@@ -11,7 +11,6 @@ export const Item = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
   margin-inline: auto;
   gap: 1rem;
   transition: all 0.2s ease-in-out;
@@ -26,7 +25,25 @@ export const Item = styled.div`
     width: 5rem;
   }
 
+  .big-image {
+    width: 100%;
+    height: auto;
+    margin-top: -1rem;
+  }
+
   .active {
     color: ${(props) => props.theme.colors.blue};
+  }
+
+  a {
+    padding: 0.75rem;
+    border-radius: 5px;
+    background-color: ${(props) => props.theme.colors.textlight};
+  }
+
+  .info {
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
   }
 `;

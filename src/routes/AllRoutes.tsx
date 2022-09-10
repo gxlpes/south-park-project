@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import { useContext } from "react";
 
 import Home from "../pages/home/Home";
 import CharacterInfo from "../pages/character(s)/info/CharacterInfo";
@@ -11,7 +10,9 @@ import EpisodesLayout from "../pages/episode(s)/layout/EpisodesLayout";
 import EpisodeListCharacters from "../pages/episode(s)/characters/EpisodeListCharacters";
 import CharacterListEpisodes from "../pages/character(s)/episodes/CharacterListEpisodes";
 import Navbar from "../components/navbar/Navbar";
+import Error from "../pages/error/Error";
 import { Content } from "../styles/Content";
+import Footer from "../components/footer/Footer";
 
 const AllRoutes = () => {
   return (
@@ -37,8 +38,11 @@ const AllRoutes = () => {
           <Route path="/character/:id" element={<CharacterInfo />}>
             <Route path="episodes" element={<CharacterListEpisodes />} />
           </Route>
+
+          <Route path="*" element={<Error />} />
         </Routes>
       </Content>
+      <Footer />
     </>
   );
 };

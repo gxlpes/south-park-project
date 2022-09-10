@@ -23,12 +23,32 @@ const CharacterInfo = () => {
       <>
         <Item>
           <img src={c.image} />
-          <p>{c.id}</p>
-          <p>{c.name}</p>
-          <p>{c.age ? c.age : "No data"}</p>
-          <p>{c.occupation}</p>
-          <p>{c.sex}</p>
-          <p>{c.hair_color}</p>
+          <div className="info">
+            <p>
+              <b>ID:</b> {c.id}
+            </p>
+            <p>
+              <b>Name:</b> {c.name}
+            </p>
+            <p>
+              <b>Age: </b>
+              {c.age ? c.age : "No data"}
+            </p>
+            <p>
+              <b>Occupation:</b> {c.occupation}
+            </p>
+            <p>
+              <b>Sex:</b> {c.sex}
+            </p>
+            <p>
+              <b>Hair color: </b>
+              {c.hair_color}
+            </p>
+          </div>
+
+          <a target="blank" href={`https://southpark.fandom.com/wiki/${c.name}`}>
+            Fandom
+          </a>
 
           <NavLink to={`episodes`}>Episodes ▼</NavLink>
         </Item>

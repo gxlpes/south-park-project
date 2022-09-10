@@ -75,6 +75,7 @@ export const Item = styled.li`
     flex-direction: column;
     align-items: flex-start;
     width: 20rem;
+    gap: 0.5rem;
   }
 
   .side-info {

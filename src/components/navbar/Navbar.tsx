@@ -12,7 +12,7 @@ const Navbar = () => {
   const { title, colors } = useContext(ThemeContext);
   const { setCharactersPage, charactersPage } = useContext(GetAllCharactersContext);
 
-  if (location.pathname === "/") {
+  if (location.pathname === "/" || location.pathname === "*") {
     return null;
   }
 
