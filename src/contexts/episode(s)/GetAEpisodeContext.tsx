@@ -14,14 +14,11 @@ export const GetAEpisodeContextProvider = ({ children }: IChildren) => {
     api
       .get(`/episodes/${episodeId}`)
       .then((res) => {
-        setEpisodeDetail(res.data.data);
-        res.data.data.map((el) => {
-          const image = el.thumbnail_url.split("/revision");
-          const fixedImage = image[0];
-          el.thumbnail_url = fixedImage;
-          console.log(res.data.data);
-        });
-        return res;
+        const el = res.data.data;
+        const image = el.thumbnail_url.split("/revision");
+        const fixedImage = image[0];
+        el.thumbnail_url = fixedImage;
+        setEpisodeDetail(el);
       })
       .catch((err) => console.error(err));
   }, [episodeId]);

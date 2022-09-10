@@ -19,7 +19,6 @@ const CharacterInfo = () => {
   }, [id]);
 
   if (charactersList[arrIndex] !== undefined) {
-    console.log("haha");
     return (
       <>
         <Item>
