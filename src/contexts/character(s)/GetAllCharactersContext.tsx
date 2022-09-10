@@ -6,23 +6,14 @@ import { CharacterSchema, PageSchema } from "../../interfaces/characterInterface
 import { IGetAllCharacters } from "../../interfaces/contextInterfaces";
 import { IChildren } from "../../interfaces/reactInterfaces";
 import api from "../../services/api";
+import usePersistedState from "../../utils/usePersistedState";
 
 export const GetAllCharactersContext = createContext<IGetAllCharacters>({} as IGetAllCharacters);
 
 export const GetAllCharactersProvider = ({ children }: IChildren) => {
   let navigate = useNavigate();
   const [charactersList, setCharactersList] = useState<CharacterSchema[]>([]);
-  const [charactersPage, setCharactersPage] = useState(() => {
-    if (window.localStorage.getItem("pageAccess")) {
-      return Number(window.localStorage.getItem("pageAccess"));
-    } else {
-      return 1;
-    }
-  });
-
-  interface imageSource {
-    thumbail: string;
-  }
+  const [charactersPage, setCharactersPage] = usePersistedState<number>("pageAccess", 1);
 
   const storage = window.localStorage.getItem("pageAccess");
 
@@ -36,7 +27,6 @@ export const GetAllCharactersProvider = ({ children }: IChildren) => {
             const res = await axios.get(url);
             const imageSource = Object.values(res.data.query.pages)[0]["thumbnail"]["source"].split("/revision");
             element.image = imageSource[0];
-            console.log(element);
           })
         );
         setCharactersList(res.data.data);
