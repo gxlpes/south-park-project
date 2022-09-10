@@ -7,8 +7,10 @@ Project created to practice multiple aspects of TypeScript and interfaces/types.
 Tech used:
 <ul>
 <li>TypeScript</li>
-<li>React (useContext, useEffect, useState)</li>
-<li>Vanilla JavaScript</li>
-<li>React Router</li>
+<li>React (useContext, useEffect, useState, customHooks)</li>
+<li>Vanilla JavaScript (scrollTo, conditional rendering)</li>
+<li>React Router (useLocation, Route, NavLink, Link)</li>
+<li>localStorage</li>
 <li>Axios</li>
-<li>South Park API</li>
+<li>Styled Components (ThemeProvider, dark/light, global)</li>
+<li>South Park API and MediaWiki API</li>
