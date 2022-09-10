@@ -22,6 +22,7 @@ export interface IGetAllEpisodes {
   setEpisodesPage: Dispatch<SetStateAction<number>>;
   nextEpisodesPage: () => void;
   prevEpisodesPage: () => void;
+  setEpisodesList: Dispatch<SetStateAction<EpisodeDataSchema[]>>;
 }
 
 export interface IGetAEpisode {
@@ -30,9 +31,9 @@ export interface IGetAEpisode {
 }
 
 export interface IFindSomething {
+  setEpisodesList: Dispatch<SetStateAction<EpisodeDataSchema[]>>;
   setSearchCategory: Dispatch<SetStateAction<string>>;
   setSearchTerm: Dispatch<SetStateAction<string>>;
-  searchResult: any;
   searchCategory: any;
   searchTerm: any;
 }

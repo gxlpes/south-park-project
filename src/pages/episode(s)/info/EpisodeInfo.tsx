@@ -29,6 +29,9 @@ const EpisodeInfo = () => {
             E{e?.episode}S{e?.season}
           </p>
           <p>{e?.description}</p>
+          <a target="blank" href={`https://southpark.fandom.com/wiki/${episodeDetail?.name}`}>
+            Fandom
+          </a>
           <Link to={`characters`}>Characters ▼</Link>
         </Item>
         <Outlet />
@@ -45,14 +48,21 @@ const EpisodeInfo = () => {
               {episodeDetail?.name}
             </p>
             <p>
-              <b>Air date:</b>
+              <b>Air date: </b>
               {episodeDetail?.air_date}
+            </p>
+            <p>
+              <b>Production number:</b> {episodeDetail?.id}
             </p>
             <p>
               E{episodeDetail?.episode}S{episodeDetail?.season}
             </p>
+
             <p>{episodeDetail?.description}</p>
           </div>
+          <a target="blank" href={`https://southpark.fandom.com/wiki/${episodeDetail?.name}`}>
+            Fandom
+          </a>
 
           <Link to={`characters`}>Characters ▼</Link>
         </Item>

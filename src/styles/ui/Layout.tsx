@@ -14,3 +14,16 @@ export const ContainerButtons = styled.div`
     }
   }
 `;
+
+export const ContainerSearch = styled.div`
+  margin-top: 5rem;
+  margin-bottom: -3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  form {
+    display: flex;
+    gap: 1rem;
+  }
+`;

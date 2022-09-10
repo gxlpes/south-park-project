@@ -29,7 +29,6 @@ export const GetAllEpisodesContextProvider = ({ children }: IChildren) => {
           const fixedImage = image[0];
           el.thumbnail_url = fixedImage;
         });
-        return res;
       })
       .catch((err) => console.error(err));
   }, [episodesPage]);
@@ -48,7 +47,7 @@ export const GetAllEpisodesContextProvider = ({ children }: IChildren) => {
 
   return (
     <GetAllEpisodesContext.Provider
-      value={{ setEpisodesPage, episodesList, nextEpisodesPage, prevEpisodesPage, episodesPage }}
+      value={{ setEpisodesList, setEpisodesPage, episodesList, nextEpisodesPage, prevEpisodesPage, episodesPage }}
     >
       {children}
     </GetAllEpisodesContext.Provider>

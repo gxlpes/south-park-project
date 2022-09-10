@@ -1,10 +1,10 @@
 import { createContext } from "react";
 import { DefaultTheme } from "styled-components";
-import usePersistedState from "../utils/usePersistedState";
-import light from "../styles/themes/light";
-import dark from "../styles/themes/dark";
-import { IChildren } from "../interfaces/reactInterfaces";
-import { ITheme } from "../interfaces/contextInterfaces";
+import usePersistedState from "../../utils/usePersistedState";
+import light from "../../styles/themes/light";
+import dark from "../../styles/themes/dark";
+import { IChildren } from "../../interfaces/reactInterfaces";
+import { ITheme } from "../../interfaces/contextInterfaces";
 
 export const ThemesContext = createContext<ITheme>({} as ITheme);
 

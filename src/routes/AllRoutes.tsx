@@ -13,6 +13,7 @@ import Navbar from "../components/navbar/Navbar";
 import Error from "../pages/error/Error";
 import { Content } from "../styles/Content";
 import Footer from "../components/footer/Footer";
+import SearchInput from "../components/searchInput/SearchInput";
 
 const AllRoutes = () => {
   return (

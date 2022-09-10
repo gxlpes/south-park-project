@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { useLocation, Link, NavLink } from "react-router-dom";
 import { ThemeContext } from "styled-components";
-import { ThemesContext } from "../../contexts/ThemesContext";
+import { ThemesContext } from "../../contexts/character(s)/ThemesContext";
 import { LinksContainer, LogoContainer, NavbarSection } from "./Styles";
 import Switch from "react-switch";
 import { GetAllCharactersContext } from "../../contexts/character(s)/GetAllCharactersContext";

@@ -3,7 +3,7 @@ import { useContext } from "react";
 import GlobalStyles from "./styles/GlobalStyles";
 
 import { ThemeProvider } from "styled-components";
-import { ThemesContext } from "./contexts/ThemesContext";
+import { ThemesContext } from "./contexts/character(s)/ThemesContext";
 
 function App() {
   const { theme } = useContext(ThemesContext);
