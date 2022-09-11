@@ -4,7 +4,7 @@ import { IChildren } from "../interfaces/reactInterfaces";
 import { GetAEpisodeContextProvider } from "./episode(s)/GetAEpisodeContext";
 import { GetAllEpisodesContextProvider } from "./episode(s)/GetAllEpisodesContext";
 import { FindSomethingContextProvider } from "./search/FindSomethingContext";
-import { ThemesContextProvider } from "./character(s)/ThemesContext";
+import { ThemesContextProvider } from "./ThemesContext";
 
 const Providers = ({ children }: IChildren) => {
   return (
