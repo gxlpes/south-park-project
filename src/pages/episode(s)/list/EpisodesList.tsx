@@ -13,7 +13,7 @@ const EpisodesList: any = () => {
         <ListContainer>
           <ListSection>
             {episodesList.map((el) => (
-              <Link to={`/episode/${el.id}`}>
+              <Link key={el.name} to={`/episode/${el.id}`}>
                 <Item>
                   <div className="image">
                     <img className="big-img" src={el.thumbnail_url} />

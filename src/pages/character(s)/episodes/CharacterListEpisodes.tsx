@@ -8,7 +8,6 @@ const CharacterListEpisodes = () => {
   const { characterDetail } = useContext(GetACharacterContext);
   const { setEpisodeId } = useContext(GetAEpisodeContext);
   const navigate = useNavigate();
-  console.log(characterDetail);
 
   const EpisodeInfoHandler = (el: string) => {
     const id = el.split("/").pop();

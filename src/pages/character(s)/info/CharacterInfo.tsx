@@ -13,7 +13,6 @@ const CharacterInfo = () => {
 
   useEffect(() => {
     if (c === undefined) {
-      console.log("setou");
       setCharacterId(Number(id));
     } else {
       setCharacterId(Number(id));
