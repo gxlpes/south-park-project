@@ -1,5 +1,5 @@
 import { GetACharacterContext } from "../../../contexts/character(s)/GetACharacterContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { GetAEpisodeContext } from "../../../contexts/episode(s)/GetAEpisodeContext";
 import { List, ListItem } from "../../../styles/ui/SecondList";
@@ -8,8 +8,7 @@ const CharacterListEpisodes = () => {
   const { characterDetail } = useContext(GetACharacterContext);
   const { setEpisodeId } = useContext(GetAEpisodeContext);
   const navigate = useNavigate();
-
-  const arrEpisodes = characterDetail.episodes;
+  console.log(characterDetail);
 
   const EpisodeInfoHandler = (el: string) => {
     const id = el.split("/").pop();

@@ -15,6 +15,8 @@ const CharacterInfo = () => {
     if (c === undefined) {
       console.log("setou");
       setCharacterId(Number(id));
+    } else {
+      setCharacterId(Number(id));
     }
   }, [id]);
 

@@ -13,6 +13,7 @@ export const GetACharacterContextProvider = ({ children }: IChildren) => {
 
   useEffect(() => {
     if (characterId > 0) {
+      console.log("rodou context");
       api
         .get(`/characters/${characterId}`)
         .then(async (resp) => {
