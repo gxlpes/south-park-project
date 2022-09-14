@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { HomeSection } from "./Styles";
 import Switch from "react-switch";
 import { useContext } from "react";
-import { ThemesContext } from "../../contexts/ThemesContext";
+import { ThemesContext } from "../../contexts/theme/ThemesContext";
 import { ThemeContext } from "styled-components";
 import { GetAllEpisodesContext } from "../../contexts/episode(s)/GetAllEpisodesContext";
 import { GetAllCharactersContext } from "../../contexts/character(s)/GetAllCharactersContext";

@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { useParams, Link, Outlet, NavLink } from "react-router-dom";
+import { useParams, Link, Outlet } from "react-router-dom";
 import { GetACharacterContext } from "../../../contexts/character(s)/GetACharacterContext";
 import { GetAllCharactersContext } from "../../../contexts/character(s)/GetAllCharactersContext";
 import { Item } from "../../../styles/ui/Info";
@@ -50,7 +50,7 @@ const CharacterInfo = () => {
             Fandom
           </a>
 
-          <NavLink to={`episodes`}>Episodes ▼</NavLink>
+          <Link to={`episodes`}>Episodes ▼</Link>
         </Item>
         <Outlet />
       </>
@@ -67,7 +67,7 @@ const CharacterInfo = () => {
           <p>{characterDetail.sex}</p>
           <p>{characterDetail.hair_color}</p>
 
-          <NavLink to={`episodes`}>Episodes ▼</NavLink>
+          <Link to={`episodes`}>Episodes ▼</Link>
         </Item>
         <Outlet />
       </>
