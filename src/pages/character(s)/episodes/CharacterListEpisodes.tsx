@@ -20,7 +20,7 @@ const CharacterListEpisodes = () => {
   return (
     <>
       <List>
-        {arrEpisodes.map((el: string) => (
+        {characterDetail.episodes.map((el: string) => (
           <a key={el} onClick={() => EpisodeInfoHandler(el)}>
             <ListItem>Episode {el.split("/").pop()}</ListItem>
           </a>
