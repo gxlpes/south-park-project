@@ -11,7 +11,7 @@ const CharactersList: any = () => {
       <ListContainer>
         <ListSection>
           {charactersList.map((el) => (
-            <Link to={`/character/${el.id}`}>
+            <Link key={el.id} to={`/character/${el.id}`}>
               <Item>
                 <div className="image">
                   <img src={el.image} />

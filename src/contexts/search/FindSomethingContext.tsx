@@ -16,7 +16,6 @@ export const FindSomethingContextProvider = ({ children }: IChildren) => {
     api
       .get(`/episodes?search=${searchTerm}`)
       .then(async (res) => {
-        console.log(res.data.data);
         setEpisodesList(res.data.data);
         res.data.data.map((el) => {
           const image = el.thumbnail_url.split("/revision");

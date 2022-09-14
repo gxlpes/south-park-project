@@ -11,16 +11,18 @@ export const GetAEpisodeContextProvider = ({ children }: IChildren) => {
   const [episodeId, setEpisodeId] = useState(0);
 
   useEffect(() => {
-    api
-      .get(`/episodes/${episodeId}`)
-      .then((res) => {
-        const el = res.data.data;
-        const image = el.thumbnail_url.split("/revision");
-        const fixedImage = image[0];
-        el.thumbnail_url = fixedImage;
-        setEpisodeDetail(el);
-      })
-      .catch((err) => console.error(err));
+    if (episodeId > 0) {
+      api
+        .get(`/episodes/${episodeId}`)
+        .then((res) => {
+          const el = res.data.data;
+          const image = el.thumbnail_url.split("/revision");
+          const fixedImage = image[0];
+          el.thumbnail_url = fixedImage;
+          setEpisodeDetail(el);
+        })
+        .catch((err) => console.error(err));
+    }
   }, [episodeId]);
 
   return <GetAEpisodeContext.Provider value={{ setEpisodeId, episodeDetail }}>{children}</GetAEpisodeContext.Provider>;
