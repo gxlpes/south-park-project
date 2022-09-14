@@ -11,7 +11,7 @@ export const ListContainer = styled.div`
 `;
 
 export const ListSection = styled.ul`
-  padding-block: 1rem;
+  padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;

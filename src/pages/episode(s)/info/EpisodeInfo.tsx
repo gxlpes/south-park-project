@@ -15,6 +15,8 @@ const EpisodeInfo = () => {
     if (e === undefined) {
       console.log("setou");
       setEpisodeId(Number(id));
+    } else {
+      setEpisodeId(Number(id));
     }
   }, [id]);
 
